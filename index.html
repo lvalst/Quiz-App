@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>The Silly Quiz in a Silly Place</title>
+  <meta name="description" type="A quiz app that runs through the questions of Monty Python and the Holy Grail.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="index.css" />
+</head>
+
+<body>
+  <main role="main" class="container">
+    <header role="banner" class="header">
+      <section>
+        <a href="index.html">
+          <img class="topMonkey" src="images/top.png" alt="smiling monkey" />
+        </a>
+      </section>
+      <section>
+        <ul>
+          <li class="sizeMe">Question:
+            <span class="questionNumber">0</span>/10</li>
+          <li class="sizeMe">Score:
+            <span class="score">0</span>
+          </li>
+        </ul>
+      </section>
+    </header>
+    <section role="region" class="jungleBox">
+      <section class="startQuiz box">
+        <h1>How much do you know about New World monkeys?</h1>
+        <img src="images/start.jpg" alt="monkey wearing cowboy hat" class="images">
+        <button type="button" class="startButton button">Start</button>
+      </section>
+      <section class="questionBox box altBox">
+      </section>
+      <section class="response box altBox"></section>
+      <section class="final box altBox"></section>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>

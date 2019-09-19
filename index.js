@@ -164,7 +164,7 @@ const STORE = [
   //submits a selected answer and checks it against the correct answer
   //runs answer functions accordingly
   function submitAnswer() {
-    $('.jungleBox').on('submit', function (event) {
+    $('.tryAgain').on('submit', function (event) {
       event.preventDefault();
       $('.altBox').hide();
       $('.response').show();
@@ -225,7 +225,7 @@ const STORE = [
   
   //generates the next question
   function nextQuestion() {
-    $('.jungleBox').on('click', '.nextButton', function (event) {
+    $('.tryAgain').on('click', '.nextButton', function (event) {
       $('.altBox').hide();
       $('.questionBox').show();
       updateQuestionNumber();
@@ -276,7 +276,7 @@ const STORE = [
   
   //takes user back to the starting view to restart the quiz
   function restartQuiz() {
-    $('.jungleBox').on('click', '.restartButton', function (event) {
+    $('.tryagain').on('click', '.restartButton', function (event) {
       event.preventDefault();
       resetStats();
       $('.altBox').hide();

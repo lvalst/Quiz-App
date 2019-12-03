@@ -11,35 +11,48 @@
 </head>
 
 <body>
-  <section>
-    <video autoplay muted loop id="myVideo">
+  <!-- background image- DO NOT CHANGE -->
+  <section class="background">
+    <video autoplay muted loop class="backVideo">
       <source src="Images/background-wheat.mp4" type="video/mp4">
     </video>
   </section>
+<!-- all html content -->
   <main role="main" class="container">
     <div class="content">
-      <heading> 
-        <h1>Introduction to Recent Biological Concepts</h1> 
+      <!-- first thing you see, includes title w/ hyperlink to beginning, stats (quesNumber and score), little friendly blurb, and button to begin quiz -->
+      <heading class="introPage"> 
+        <h1><a href="index.html">Introduction to Recent Biological Concepts</a></h1> 
         <section class ="quizScores">
           <ul>
-            <li class="counter">Question:
-              <span class="questionNumber"> - </span>/5</li>
-            <li class="counter">Score:
+            <li class="stats">Question:
+              <span class="quesNumber"> - </span>/5</li>
+            <li class="stats">Score:
               <span class="score">0</span>
             </li>
           </ul>
         </section>
-      </heading>
-
-      <section role="region" class="quizBoxes">
+        <!-- will hide startQuiz box when quiz begins and replace w/ ques using jquery -->
         <section class="startQuiz box">
           <h1>Let's review some biological concepts developed in the recent centuries!</h1>
-          <button type="button" id="begin">Begin</button>
+          <button type="submit" class="beginQuiz">Begin</button>
         </section>
-        <section class="questionBox box altBox">
+      </heading>
+
+      <!-- where quiz questions, answers, and final results will appear. same CSS -->
+      <section class="quizPortion">
+        <!-- questions with submitAns button -->
+        <section class="question box altBox">
+          <button type="submit" class="submitAns">Submit</button>
         </section>
-        <section class="response box altBox"></section>
-        <section class="final box altBox"></section>
+        <!-- answers with nextQues button -->
+        <section class="response box altBox">
+          <button type="submit" class="nextQues">Next Question</button>
+        </section>
+        <!--  -->
+        <section class="final box altBox">
+          <button type="submit" class="restartQuiz">Try Again?</button>
+        </section>
       </section>
       
     </div>

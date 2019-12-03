@@ -1,7 +1,8 @@
 * {
   font-family: 'Philosopher', sans-serif;
 }
-#myVideo {
+/* background video- DO NOT ADJUST */
+.backVideo {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -9,7 +10,7 @@
   min-height: 100%;
   z-index: -1;
 }
-
+/* base rules for everything within  */
 .container {
   text-align: center;
   padding: 10%;
@@ -43,7 +44,7 @@ heading {
   margin: .1% 2%;
 }
 
-#begin {
+button {
   margin: 3%;
   height: auto;
   font-size: 22px;

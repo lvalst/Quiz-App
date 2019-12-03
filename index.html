@@ -20,42 +20,47 @@
 <!-- all html content -->
   <main role="main" class="container">
     <div class="content">
-      <!-- first thing you see, includes title w/ hyperlink to beginning, stats (quesNumber and score), little friendly blurb, and button to begin quiz -->
+      <!-- first thing you see, includes title w/ hyperlink to beginning, stats (quesNumber and score), little friendly blurb, and button to begin quiz --DONE -->
       <heading class="introPage"> 
-        <h1><a href="index.html">Introduction to Recent Biological Concepts</a></h1> 
+        <h1><a href="index.html" class="title">Introduction to Recent Biological Concepts</a></h1> 
         <section class ="quizScores">
           <ul>
             <li class="stats">Question:
-              <span class="quesNumber"> - </span>/5</li>
+              <span class="quesNumber"> 0 </span> of 5</li>
             <li class="stats">Score:
               <span class="score">0</span>
             </li>
           </ul>
-        </section>
-        <!-- will hide startQuiz box when quiz begins and replace w/ ques using jquery -->
+        </section> <!--quizScores-->
+
+        <!-- js will hide startQuiz box when quiz begins and replace w/ question box altBox -->
         <section class="startQuiz box">
           <h1>Let's review some biological concepts developed in the recent centuries!</h1>
           <button type="submit" class="beginQuiz">Begin</button>
-        </section>
-      </heading>
+        </section> <!--startQuiz box-->
+      </heading> <!--introPage-->
 
       <!-- where quiz questions, answers, and final results will appear. same CSS -->
       <section class="quizPortion">
         <!-- questions with submitAns button -->
         <section class="question box altBox">
-          <button type="submit" class="submitAns">Submit</button>
+          <form>
+            <fieldset class="quesButtons">
+              <legend></legend>
+              <button type="submit" class="submitAns">Submit</button>
+            </fieldset>
+          </form>
         </section>
         <!-- answers with nextQues button -->
         <section class="response box altBox">
           <button type="submit" class="nextQues">Next Question</button>
         </section>
-        <!--  -->
+        <!-- results with restartQuiz button -->
         <section class="final box altBox">
           <button type="submit" class="restartQuiz">Try Again?</button>
         </section>
-      </section>
-      
-    </div>
+      </section> <!--quizPortion-->
+    </div> <!--content -->
   </main>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

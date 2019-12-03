@@ -2,53 +2,51 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <title>The Silly Quiz in a Silly Place</title>
-    <meta name="description" type="A quiz app that runs through the questions of Monty Python and the Holy Grail.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="index.css" />
+  <meta charset="utf-8" />
+  <title>Introduction to Biology Quiz</title>
+  <meta name="description" type="A quiz that tests knowledge on basic biological discoveies and concepts in recent history">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Philosopher&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="index.css" />
 </head>
 
 <body>
-    <main role="main" class="container">
-        <header role="banner" class="header">
-            <section>
-                <a href="index.html">
-                    <img class="bridgeBanner" src="Images/Bridge-of-Death-banner.jpg" alt="Welcome to the Quiz" />
-                </a>
-            </section>
-        </header>
-        <section role="region" class="tryAgain">
-            <section class="startQuiz box">
-                <h1>Who would cross the Bridge of Death must answer me these questions three, ere the other side he see.
-                </h1>
-                <img src="Images/Bridgekeeper-start.png" alt="bridge keeper stops you" class="images">
-                <button type="button" class="startButton button">Walk to the Bridge of Death?</button>
-                <section>
-                    <ul>
-                        <li class="sizeMe">Question:
-                            <span class="questionNumber">0</span>/12</li>
-                        <li class="sizeMe">Score:
-                            <span class="score">0</span>
-                        </li>
-                    </ul>
-                </section>
-            </section>
-            
-            <section class="questionBox box altBox">
-            </section>
-            <section class="response box altBox"></section>
-            <section class="final box altBox"></section>
+  <section>
+    <video autoplay muted loop id="myVideo">
+      <source src="Images/background-wheat.mp4" type="video/mp4">
+    </video>
+  </section>
+  <main role="main" class="container">
+    <div class="content">
+      <heading> 
+        <h1>Introduction to Recent Biological Concepts</h1> 
+        <section class ="quizScores">
+          <ul>
+            <li class="sizeMe">Question:
+              <span class="questionNumber">0</span>/5</li>
+            <li class="sizeMe">Score:
+              <span class="score">0</span>
+            </li>
+          </ul>
         </section>
-    </main>
+      </heading>
 
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+      <section role="region" class="quizBoxes">
+        <section class="startQuiz box">
+          <p> toaster riches. </p>
+        </section>
+        <section class="questionBox box altBox">
+        </section>
+        <section class="response box altBox"></section>
+        <section class="final box altBox"></section>
+      </section>
+      
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="store.js"></script>
     <script src="index.js"></script>
 </body>
 

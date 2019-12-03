@@ -12,7 +12,7 @@
 
 .container {
   text-align: center;
-  padding: 6em;
+  padding: 10%;
   /* display: inline-block; */
   /* margin: auto; */
 }
@@ -21,18 +21,37 @@
   display: inline-block;
   background: rgba(0, 0, 0, 0.5);
   color: #f1f1f1;
-  padding:10px;
+  padding:2% 5%;
   border-radius: 15px;
-  border: 1px solid goldenrod;
+  border: 1.5px solid goldenrod;
 }
 
 heading {
   color: #f1f1f1;
-  padding: 30px;
+  padding: 3%;
 }
 
 .quizScores ul {
   list-style-type: none;
   color: rgb(118, 189, 59);
-  display: none;
+  text-align: center;
+  font-size: 22px;
+}
+
+.sizeMe {
+  display: inline-block;
+  padding:.25%;
+  margin: .1% 2%;
+}
+
+#begin {
+  margin: 3%;
+  height: auto;
+  font-size: 22px;
+  font-weight: 900;
+  text-align: center;
+  background:rgb(216, 175, 72);
+  border: 1px solid goldenrod;
+  border-radius:3px;
+  padding: 1.7%;
 }

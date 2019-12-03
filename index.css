@@ -13,8 +13,7 @@
 .container {
   text-align: center;
   padding: 10%;
-  /* display: inline-block; */
-  /* margin: auto; */
+  margin: auto;
 }
 
 .content {
@@ -38,7 +37,7 @@ heading {
   font-size: 22px;
 }
 
-.sizeMe {
+.counter {
   display: inline-block;
   padding:.25%;
   margin: .1% 2%;
@@ -48,7 +47,6 @@ heading {
   margin: 3%;
   height: auto;
   font-size: 22px;
-  font-weight: 900;
   text-align: center;
   background:rgb(216, 175, 72);
   border: 1px solid goldenrod;

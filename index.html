@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <title>Introduction to Biology Quiz</title>
-  <meta name="description" type="A quiz that tests knowledge on basic biological discoveies and concepts in recent history">
+  <meta name="description"
+    type="A quiz that tests knowledge on basic biological discoveies and concepts in recent history">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Philosopher&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="index.css" />
@@ -17,13 +18,13 @@
       <source src="Images/background-wheat.mp4" type="video/mp4">
     </video>
   </section>
-<!-- all html content -->
+  <!-- all html content -->
   <main role="main" class="container">
     <div class="content">
       <!-- first thing you see, includes title w/ hyperlink to beginning, stats (quesNumber and score), little friendly blurb, and button to begin quiz --DONE -->
-      <heading class="introPage"> 
-        <h1><a href="index.html" class="title">Introduction to Recent Biological Concepts</a></h1> 
-        <section class ="quizScores">
+      <heading class="introPage">
+        <h1><a href="index.html" class="title">Introduction to Recent Biological Concepts</a></h1>
+        <section class="quizScores">
           <ul>
             <li class="stats">Question:
               <span class="quesNumber"> 0 </span> of 5</li>
@@ -31,42 +32,42 @@
               <span class="score">0</span>
             </li>
           </ul>
-        </section> <!--quizScores-->
+        </section>
+        <!--quizScores-->
 
         <!-- js will hide startQuiz box when quiz begins and replace w/ question box altBox -->
         <section class="startQuiz box">
           <h1>Let's review some biological concepts developed in the recent centuries!</h1>
           <button type="submit" class="beginQuiz">Begin</button>
-        </section> <!--startQuiz box-->
-      </heading> <!--introPage-->
+        </section>
+        <!--startQuiz box-->
+      </heading>
+      <!--introPage-->
 
       <!-- where quiz questions, answers, and final results will appear. same CSS -->
       <section class="quizPortion">
         <!-- questions with submitAns button -->
-        <section class="question box altBox">
-          <form>
-            <fieldset class="quesButtons">
-              <legend></legend>
-              <button type="submit" class="submitAns">Submit</button>
-            </fieldset>
-          </form>
+        <section class="questionBox altBox">
         </section>
         <!-- answers with nextQues button -->
-        <section class="response box altBox">
+        <section class="responseBox altBox">
           <button type="submit" class="nextQues">Next Question</button>
         </section>
         <!-- results with restartQuiz button -->
-        <section class="final box altBox">
-          <button type="submit" class="restartQuiz">Try Again?</button>
+        <section class="finalBox altBox">
+          <!-- see if this works without needing a function for it -->
+          <button type="submit" class="restartQuiz"><a href="index.html">Try Again?</a></button>
         </section>
-      </section> <!--quizPortion-->
-    </div> <!--content -->
+      </section>
+      <!--quizPortion-->
+    </div>
+    <!--content -->
   </main>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-    <script src="store.js"></script>
-    <script src="index.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="store.js"></script>
+  <script src="index.js"></script>
 </body>
 
 </html>

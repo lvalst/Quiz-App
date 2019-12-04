@@ -32,6 +32,7 @@ function updateScore() {// for the function of updateScore, add 1 to existing nu
 
 //adds one to questionNumber and updates text of questionNumber on the quiz. at start, questionNumber 0, once hit begin button, adds one to indicate first question
 function updateQuesNum() {
+    // $('.')
     questionNum++;
     $('.quesNumber').text(questionNum);
 }
@@ -51,7 +52,7 @@ function makeQuestion() {
 
 //tells when to make a new question or go to results page
 function nextQuestion() {
-    if (questionNum + 1 < STORE.length) { //if the question number is less than the number of stored questions
+    if (questionNum < STORE.length) { //if the question number is less than the number of stored questions
         updateQuesNum(); //run function updateQuesNum
         $('.responseBox').hide() //hide the respones section
         return makeQuestion(questionNum); //run function to show next question
@@ -74,11 +75,12 @@ function nextQuestion() {
 
 //starts quiz
 function startQuiz() {
-    $('.startQuiz button').click(function (){
+    $('.startQuiz button').click('submit', function (event){
+        event.preventDefault();
         $('.startQuiz').hide(); //hide portion with blurb and begin button
         $('.quesNumber').text(1); //change quesNumber to 1
         $('.questionBox').show(); //'unhide' questionBox section
-        $('.questionBox').prepend(makeQuestion()); //add result from generateQuestion function to .questionBox
+        $('.questionBox').prepend(formatQues()); //add result from formatQuestion function to .questionBox
     });
     // $('.altBox').hide(); //hide all questions, answers, results immediately when page loads
     // $('.content').on('click', '.beginQuiz', function (event) { //run startQuiz when click beginQuiz button
@@ -109,7 +111,7 @@ function checkAnswer(){
 function formatQues(questionNum) {
     let formMaker = $(` <form>
     <fieldset class="quesButtons">
-        <legend>class="questionText">${STORE[questionNum].question}</legend>
+        <legend>class="questionText">${STORE[questionNum]}</legend>
     </fieldset>
   </form>`)
   
@@ -125,6 +127,13 @@ function formatQues(questionNum) {
     $(`<button type="submit" class="submitAns">Submit</button>`).appendTo(fieldSelector);
     return formMaker;
   }
+function isCorrect(){
+    $(updateScore);
+}
+
+function wrongAnswer(){
+
+}
 
 //functions used to create full quiz
 function sum13tch() {

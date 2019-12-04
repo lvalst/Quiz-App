@@ -1,4 +1,8 @@
-* {
+.altBox { 
+  display:none;
+}  /* cannot use quizPortion tag, doesn't allow jquery to grab any of it to show */
+
+ * {
   box-sizing: border-box;
   font-family: 'Philosopher', sans-serif;
 }
@@ -9,7 +13,7 @@
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
-  z-index: -1;
+  z-index: -1; 
 }
 /* base rules for all html content */
 main, html {
@@ -57,7 +61,7 @@ li:hover {
 li .stats {
   display: inline-block; 
   font-weight: bold;
-}
+}  */
 
 /* name of quiz style */
 h1 .title {
@@ -68,12 +72,12 @@ h1 .title {
 h1 .title:hover {
   text-decoration: underline;
   color: #e7dca2;
-}
+} */
 
 /* quick blurb at beginning of quiz */
 .startQuiz h1 {
   font-size: 24px;
-}
+} 
 
 /* start button design */
 button {
@@ -94,10 +98,6 @@ button:focus {
 
 button:active {
   background: rgb(139, 161, 58);
-  border: 1px solid rgb(31, 119, 39);
-}
+  border: 1px solid rgb(31, 119, 39); 
+} 
 /* end button design */
-
-.quizPortion {
-  display:none;
-}

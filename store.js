@@ -1,8 +1,8 @@
 //question database. change questions so better for potential employers, not just thinkful/school
 const STORE = [
   {//1
-    question: 'How did Anton van Leeuwenhoek make an important contribution to the development of the cell theory?',
-    answers: [
+    question : 'How did Anton van Leeuwenhoek make an important contribution to the development of the cell theory?',
+    answers : [
       'He theorized that the pattern component of the theory is that all are organisms are made of cells.',
       'He theorized that the process compenent of the theory is that all cells come from pre-existing cells. ',
       'He invented the first microscope and saw the first cell.',

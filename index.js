@@ -29,7 +29,8 @@ function startQuiz() {
         $('.quesNumber').text(1); //change quesNumber to 1
         $('.questionBox').show();//show questionBox
         $('.questionBox').prepend(makeQuestion());//add result from formatQuestion function to .questionBox
-    }
+        $('.quizPortion').css('display','inline-box');
+        }
     );
 }
 //create a question to be used in startQuiz function

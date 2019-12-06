@@ -14,9 +14,9 @@
 <body>
   <!-- background image- DO NOT CHANGE -->
   <section class="background">
-    <video autoplay muted loop class="backVideo">
+    <!-- <video autoplay muted loop class="backVideo">
       <source src="Images/background-wheat.mp4" type="video/mp4">
-    </video>
+    </video> -->
   </section>
   <!-- all html content -->
   <main role="main" class="container">
@@ -35,30 +35,30 @@
         </section>
         <!--quizScores-->
 
-        <!-- js will hide startQuiz box when quiz begins and replace w/ question box altBox -->
+        <!-- js will hide startQuiz box when quiz begins and replace w/ question box sect -->
         <section class="startQuiz box">
           <h1>Let's review some biological concepts developed in the recent centuries!</h1>
-          <button type="submit" class="beginQuiz">Begin</button>
+          <button>Begin</button>
         </section>
-        <!--startQuiz box-->
       </heading>
       <!--introPage-->
 
       <!-- where quiz questions, answers, and final results will appear. same CSS -->
       <div class="quizPortion">
         <!-- questions with submitAns button -->
-        <section class="questionBox altBox">
+        <section class="quesBox y box">
           <p>My canary in the coalmine!</p>
           <!-- <button type="submit" class="submitAns">Submit Answer</button> -->
         </section>
         <!-- answers with nextQues button -->
-        <section class="responseBox altBox">
-          <button type="submit" class="nextQues">Next Question</button>
+        <section class="ansBox y box">
+          <p>Maybe a robin this time?</p>
+          
         </section>
         <!-- results with restartQuiz button -->
-        <section class="finalBox altBox">
+        <section class="redoBox y box">
           <!-- see if this works without needing a function for it -->
-          <button type="submit" class="restartQuiz"><a href="index.html">Try Again?</a></button>
+          <!-- <button type="submit" class="restartQuiz"><a href="index.html">Try Again?</a></button> -->
         </section>
       </div>
       <!--quizPortion-->
@@ -69,7 +69,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="store.js"></script>
-  <script src="index.js"></script>
+  <script src="indexbranch.js"></script>
 </body>
 
 </html>

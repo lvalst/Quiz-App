@@ -63,13 +63,15 @@ function makeQues(quesNumber) { //run this function based off of the quesNumber
             <span>${answerValue}</span>
         </label>`).appendTo(fieldSelector); //goes to each answer in the question and applies radio type to it with the index as the order respective string value, then adds to the the end of the fieldselector variable (behind formMaker)
 
-        $(`<button type='submit' class='submitAns'>Submit Answer</button>`).appendTo(fieldSelector); //creates a submit button and adds it under the answers on the fieldSelector variable
+        //typically only use submit type button when form bieng entered form client side- repropogates entire page
+
+        $(`<button class='submitAns'>Submit Answer</button>`).appendTo(fieldSelector); //creates a submit button and adds it under the answers on the fieldSelector variable
         return formMaker //return updated formMaker variable (allows it to change depending on quesNumber)
     });
 }
 
 function checkQues() {
-    $('.quizPortion').on('submit', function(event){
+    $('.quizPortion').on('click', function(event){
         event.preventDefault();
         $('.quesBox').hide();
         $('.ansBox').show();
@@ -90,7 +92,7 @@ function correctAns(){
         `<h2>Great job! You are correct</h2> 
         <p class = 'sizeMe'>${STORE[quesNumber].correctAnswer}</p>
         <p class = 'sizeMe'>Want to try the next one?</p>
-        <button type='submit' class='nextQues'>Next Question</button>`);
+        <button class='nextQues'>Next Question</button>`);
     plusScoreNum();
     plusQuesNum();
 };
@@ -100,14 +102,14 @@ function wrongAns(){
         `<h2> Oh, close but not quite!</h2>
         <p class='sizeMe'>${STORE[quesNumber].correctAnswer} is actually the right answer.</p>
         <p class ='sizeMe'> Let's try again! </p>
-        <button type ='submit class = 'nextQues'> Next Question</button>`
+        <button class = 'nextQues'> Next Question</button>`
     );
     plusQuesNum();
 };
 
 //makes next question
 function nextQues() {
-    $('.submitAns').on('submit', function () {
+    $('.submitAns').on('click', function () {
         if (quesNumber < STORE.length) {
             plusQuesNum();
             $('.ansBox').hide()

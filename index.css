@@ -1,6 +1,6 @@
- /* .y { 
+ .y { 
   display:none; 
-} */
+}
  /* cannot use quizPortion tag, doesn't allow jquery to grab any of it to show*/
 .quizScores {
   display:none;

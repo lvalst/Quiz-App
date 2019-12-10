@@ -19,7 +19,7 @@
   min-width: 100%;
   min-height: 100%;
   z-index: -1; 
-} */
+}  */
 /* base rules for all html content */
 /* main, html {
   margin: 0;
@@ -37,7 +37,7 @@ main {
   border-radius: 15px;
   border: 1.5px solid goldenrod;
   background: rgba(0, 0, 0, 0.5);
-} */
+}
 /* scores and ques number */
 /* .quizScores {
   color: rgb(117, 161, 58);
@@ -95,8 +95,8 @@ h1 .title:hover {
   border: 1px solid goldenrod;
   border-radius:3px;
   padding: 1.7%;
-} */
-/* 
+}
+
 button:focus {
   outline: none;
 }
@@ -104,5 +104,5 @@ button:focus {
 button:active {
   background: rgb(139, 161, 58);
   border: 1px solid rgb(31, 119, 39); 
-}  */
+} */
 /* end button design  */

@@ -70,15 +70,17 @@ const STORE = [
 
 
 //base quesNumber and score in quizScores
-let quesNumber = 0;
 let score = 0;
+let quesNumber = 0;
 //works
 
 // //when to make new question or finish quiz
 function newQues() { //same as monkey nextQuestion()
-    if (quesNumber +1 < STORE.length) { //if the quesNumber is less than number of questions in the STORE
+    if (quesNumber < STORE.length) { //if the quesNumber is less than number of questions in the STORE
         return makeQues(quesNumber); //run the makeQues function using that quesNumber
     } else { //if not
+        $('.ansBox').hide();
+        $('.redoBox').show();
         finalScore(); //run the finalScore function
         $('.quesNumber').text(5); //and show quesNumber out of 5
     }
@@ -93,14 +95,14 @@ function plusQuesNum() {
 //update the score portion in quizScores
 function plusScoreNum() {
     score++
-    $('.score').text(score + 1);
+    $('.score').text(score);
 } //works
 
 function resetStats() {
     score = 0;
-    questionNumber = 0;
+    quesNumber = 0;
     $('.score').text(0);
-    $('.questionNumber').text(0);
+    $('.quesNumber').text(0);
   }
 
 //click the .beginQuiz button, start the quiz
@@ -111,7 +113,7 @@ function startQuiz() {
         $('.quesNumber').text(1); //work
         $('.quizScores').show();//work
         $('.quesBox').show(); //work
-        $('.quesBox').prepend(makeQues());
+        $('.quesBox').prepend(newQues());
     });
 }
 
@@ -123,9 +125,9 @@ function checkQues() {
         let answer = selected.val();
         let correct = STORE[quesNumber].correctAnswer;
         if (answer === correct) {
-            return correctAns();
+            correctAns();
         } else {
-            return wrongAns();
+            wrongAns();
         }
 
     });
@@ -188,7 +190,7 @@ function nextQues() {
 //need to prep page for actions
 function overallFun() {
     startQuiz();
-    makeQues();
+    newQues();
     checkQues();
     nextQues();
 };

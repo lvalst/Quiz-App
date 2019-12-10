@@ -12,6 +12,16 @@ let quesNumber = 0;
 let score = 0;
 //works
 
+// //when to make new question or finish quiz
+function newQues() { //same as monkey nextQuestion()
+    if (quesNumber +1 < STORE.length) { //if the quesNumber is less than number of questions in the STORE
+        return makeQues(quesNumber); //run the makeQues function using that quesNumber
+    } else { //if not
+        finalScore(); //run the finalScore function
+        $('.quesNumber').text(5); //and show quesNumber out of 5
+    }
+}
+
 //update the quesNumber portion in quizScores
 function plusQuesNum() {
     quesNumber++
@@ -23,6 +33,13 @@ function plusScoreNum() {
     score++
     $('.score').text(score + 1);
 } //works
+
+function resetStats() {
+    score = 0;
+    questionNumber = 0;
+    $('.score').text(0);
+    $('.questionNumber').text(0);
+  }
 
 //click the .beginQuiz button, start the quiz
 function startQuiz() {
@@ -36,15 +53,21 @@ function startQuiz() {
     });
 }
 
-// //when to make new question or finish quiz
-// function newQues() { //same as monkey nextQuestion()
-//     if (quesNumber +1 < STORE.length) { //if the quesNumber is less than number of questions in the STORE
-//         return makeQues(quesNumber); //run the makeQues function using that quesNumber
-//     } else { //if not
-//         finalScore(); //run the finalScore function
-//         $('.quesNumber').text(5); //and show quesNumber out of 5
-//     }
-// }
+function checkQues() {
+    $('.quesBox').on('click', function () {
+        $('.quesBox').hide();
+        $('.ansBox').show();
+        let selected = $('input:checked');
+        let answer = selected.val();
+        let correct = STORE[quesNumber].correctAnswer;
+        if (answer === correct) {
+            return correctAns();
+        } else {
+            return wrongAns();
+        }
+
+    });
+}
 
 //question format using values from STORE
 function makeQues(quesNumber) { //run this function based off of the quesNumber
@@ -61,27 +84,13 @@ function makeQues(quesNumber) { //run this function based off of the quesNumber
         $(`<label class="sizeMe" for="${answerIndex}">
             <input class="radio" type="radio" id="${answerIndex}" value="${answerValue}" name ="answer" required>
             <span>${answerValue}</span>
-        </label>`).appendTo(fieldSelector); //goes to each answer in the question and applies radio type to it with the index as the order respective string value, then adds to the the end of the fieldselector variable (behind formMaker)
+        </label>
+        `).appendTo(fieldSelector);
+        }); //goes to each answer in the question and applies radio type to it with the index as the order respective string value, then adds to the the end of the fieldselector variable (behind formMaker)
 
         $(`<button class="submitAns">Submit Answer</button>`).appendTo(fieldSelector); //creates a submit button and adds it under the answers on the fieldSelector variable
         return formMaker //return updated formMaker variable (allows it to change depending on quesNumber)
-    });
-}
 
-function checkQues() {
-    $('.quesBox').on('click', function () {
-        $('.quesBox').hide();
-        $('.ansBox').show();
-        let selected = $('input:checked');
-        let answer = selected.val();
-        let correct = `${STORE[quesNumber].correctAnswer}`;
-        if (answer === correct) {
-            return correctAns();
-        } else {
-            return wrongAns();
-        }
-
-    });
 }
 
 function correctAns() {

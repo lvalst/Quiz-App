@@ -15,7 +15,7 @@ const STORE = [
         'Which of these is not one of the five fundamental characteristics used to define life in an organism?',
       answers: [
         'Organisms may exclusively use hosts in order to reproduce and replicate.',
-        'Organisms are made up of membrane-bound cells, whcih regulates the passage of materials between the interior and exterior spaces.',
+        'Organisms are made up of membrane-bound cells, which regulate the passage of materials between the interior and exterior spaces.',
         'Organisms must acquire and use energy to stay alive and reproduce.',
         'Organisms are the product of evolution and a population of organisms will continue to evolve through time.'
         ],
@@ -35,7 +35,7 @@ const STORE = [
         'The characteristics of populations change through time.'
     },
     {//4
-      question: 'What does it mean to say that a characteristic of an oganism is heritable',
+      question: 'What does it mean to say that a characteristic of an organism is heritable',
       answers: [
         'The characteristic evolves.',
         'The characteristic can be passed on to offspring.',
@@ -51,7 +51,7 @@ const STORE = [
       answers: [
         'The degree of training and muscle mass an individual has, relative to others in the same population.',
         'An individual\'s\ slimness, relative to others in the same population.',
-        'The longevity of a particular indivdual',
+        'The longevity of a particular individual',
         'An individual\'s\ ability to survive and reproduce.'
         ],
       correctAnswer:
@@ -75,11 +75,11 @@ let quesNumber = 0;
 //works
 
 // //when to make new question or finish quiz
-function newQues() { //same as monkey nextQuestion()
+function newQues() { //same as monkey generateQuestion()
     if (quesNumber < STORE.length) { //if the quesNumber is less than number of questions in the STORE
         return makeQues(quesNumber); //run the makeQues function using that quesNumber
     } else { //if not
-        $('.ansBox').hide();
+        $('.y').hide();
         $('.redoBox').show();
         finalScore(); //run the finalScore function
         $('.quesNumber').text(5); //and show quesNumber out of 5
@@ -118,8 +118,9 @@ function startQuiz() {
 }
 
 function checkQues() {
-    $('.quesBox').on('click', function () {
-        $('.quesBox').hide();
+    $('.quizPortion').on('click','.submitAns', function (event) {
+        event.preventDefault();
+        $('.y').hide();
         $('.ansBox').show();
         let selected = $('input:checked');
         let answer = selected.val();
@@ -148,11 +149,11 @@ function makeQues(quesNumber) { //run this function based off of the quesNumber
         $(`<label class="sizeMe" for="${answerIndex}">
             <input class="radio" type="radio" id="${answerIndex}" value="${answerValue}" name ="answer" required>
             <span>${answerValue}</span>
-        </label>
+        </label> <br>
         `).appendTo(fieldSelector);
         }); //goes to each answer in the question and applies radio type to it with the index as the order respective string value, then adds to the the end of the fieldselector variable (behind formMaker)
 
-        $(`<button class="submitAns">Submit Answer</button>`).appendTo(fieldSelector); //creates a submit button and adds it under the answers on the fieldSelector variable
+        $(`<button class="submitAns button">Submit Answer</button>`).appendTo(fieldSelector); //creates a submit button and adds it under the answers on the fieldSelector variable
         return formMaker //return updated formMaker variable (allows it to change depending on quesNumber)
 }
 
@@ -161,29 +162,34 @@ function correctAns() {
         `<h2>Great job! You are correct</h2> 
         <p class = "sizeMe">${STORE[quesNumber].correctAnswer}</p>
         <p class = "sizeMe">Want to try the next one?</p>
-        <button class="newQues">Next Question</button>`);
+        <button class="newQues button">Next Question</button>`);
     plusScoreNum();
 };
 
 function wrongAns() {
-    $('.ansBox').prepend(
+    $('.ansBox').html(
         `<h2> Oh, close but not quite!</h2>
         <p class="sizeMe">${STORE[quesNumber].correctAnswer} is actually the right answer.</p>
         <p class ="sizeMe"> Let's try again! </p>
-        <button class = "newQues"> Next Question</button>`
+        <button class = "newQues button"> Next Question</button>`
     );
 };
 
 //makes next question
 function nextQues() {
-    $('.quizPortion').on('click', '.newQues', function () {
-        if (quesNumber + 1 < STORE.length) {
-            $('.ansBox').hide();
+    $('.quizPortion').on('click','.newQues', function () {
+        if (quesNumber <= STORE.length) {
+            $('.y').hide();
             $('.quesBox').show();
             plusQuesNum();
-            $('.quesBox').replaceWith(makeQues());
-            // return makeQues(quesNumber);  
-        } 
+            $('.quesBox form').replaceWith(newQues());
+        } else {
+            $('.y').hide();
+            $('.redoBox').show();
+            finalScore(); //run the finalScore function
+            $('.quesNumber').text(5); //and show quesNumber out of 5
+        }
+        // return makeQues(quesNumber);  
     });
 }
 

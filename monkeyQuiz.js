@@ -192,7 +192,7 @@ function createThing(questionIndex) {
   STORE[questionIndex].answers.forEach(function (answerValue, answerIndex) {
     $(`<label class="sizeMe" for="${answerIndex}">
         <input class="radio" type="radio" id="${answerIndex}" value="${answerValue}" name="answer" required>
-        <span>${answerValue}</span>
+        <span>${answerValue}</span> <br>
       </label>
       `).appendTo(fieldSelector);
   });

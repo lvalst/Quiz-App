@@ -12,16 +12,16 @@
 }
 
 /* background video- DO NOT ADJUST */
-/* .backVideo {
+.backVideo {
   position: fixed;
   right: 0;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
   z-index: -1; 
-}  */
+} 
 /* base rules for all html content */
-/* main, html {
+main, html {
   margin: 0;
   padding: 0;
 }
@@ -39,7 +39,7 @@ main {
   background: rgba(0, 0, 0, 0.5);
 }
 /* scores and ques number */
-/* .quizScores {
+.quizScores {
   color: rgb(117, 161, 58);
   margin: auto;
   text-shadow:
@@ -66,10 +66,10 @@ li:hover {
 li .stats {
   display: inline-block; 
   font-weight: bold;
-}  */
+} 
 
 /* name of quiz style */
-/* h1 .title {
+h1 .title {
   text-decoration: none;
   color: #ebe5c6;
   padding: 3%;
@@ -77,15 +77,15 @@ li .stats {
 h1 .title:hover {
   text-decoration: underline;
   color: #e7dca2;
-}  */
+} 
 
 /* quick blurb at beginning of quiz */
-/* .startQuiz h1 {
+.startQuiz h1 {
   font-size: 24px;
-}  */
+} 
 
 /* start button design */
-/* button {
+button {
   text-decoration: none;
   margin: 3%;
   height: auto;
@@ -104,5 +104,5 @@ button:focus {
 button:active {
   background: rgb(139, 161, 58);
   border: 1px solid rgb(31, 119, 39); 
-} */
+}
 /* end button design  */

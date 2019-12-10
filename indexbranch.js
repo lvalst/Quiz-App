@@ -90,7 +90,6 @@ function makeQues(quesNumber) { //run this function based off of the quesNumber
 
         $(`<button class="submitAns">Submit Answer</button>`).appendTo(fieldSelector); //creates a submit button and adds it under the answers on the fieldSelector variable
         return formMaker //return updated formMaker variable (allows it to change depending on quesNumber)
-
 }
 
 function correctAns() {
@@ -117,15 +116,10 @@ function nextQues() {
         if (quesNumber + 1 < STORE.length) {
             $('.ansBox').hide();
             $('.quesBox').show();
-            makeQues(quesNumber);
+            plusQuesNum();
+            $('.quesBox').replaceWith(makeQues());
             // return makeQues(quesNumber);  
-        } else {
-            $('.quesBox').hide();
-            $('.ansBox').hide();
-            $('.redoBox').show();
-            finalScore();
-            $('.quesNumber').text(5);
-        }
+        } 
     });
 }
 

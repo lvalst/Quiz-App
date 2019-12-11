@@ -27,17 +27,19 @@ main, html {
 }
 main {
   text-align: center;
-  padding: 7%;
   color: #ebe5c6;
   margin: auto;
+  padding-top: 3%;
 }
 .content {
   display: inline-block;
-  padding:2% 5%;
   border-radius: 15px;
   border: 1.5px solid goldenrod;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(20, 16, 0, 0.7);
+  width:65%;
+  margin: auto;
 }
+
 /* scores and ques number */
 .quizScores {
   color: rgb(117, 161, 58);
@@ -72,16 +74,18 @@ li .stats {
 h1 .title {
   text-decoration: none;
   color: #ebe5c6;
-  padding: 3%;
+  font-size: 30px;
 }
 h1 .title:hover {
   text-decoration: underline;
   color: #e7dca2;
 } 
 
+
 /* quick blurb at beginning of quiz */
 .startQuiz h1 {
   font-size: 24px;
+  color: rgb(204, 161, 51);
 } 
 
 /* start button design */
@@ -106,3 +110,50 @@ button:active {
   border: 1px solid rgb(31, 119, 39); 
 }
 /* end button design  */
+
+/* formatting for the .quesBox questions, answers, and positioning */
+
+.box {
+  margin: 20px;
+}
+
+fieldset {
+  display: inline-block;
+  border: none;
+  margin:auto;
+  width: 92%;
+}
+fieldset .quesText {
+  color: rgb(204, 161, 51);
+  font-weight: bold;
+  font-size: 22px;
+  margin: 0, 20px;
+}
+
+.sizeMe input { /* radio buttons*/
+  float:left; 
+  margin:10px, 0;
+}
+.sizeMe span {
+  margin: 30px, 0;
+}
+
+
+/* formatting for the text in .ansBox */
+.ansBox h2 {
+  font-size:24px; 
+  font-weight:normal;
+}
+.ansBox h3 {
+  font-weight:lighter;
+}
+.ansBox h3 span {
+  font-style:italic; 
+  color: goldenrod; 
+  font-size:22px;
+}
+.ansBox p {
+  font-size:22px;
+}
+
+/* formatting for the text in .redoBox */

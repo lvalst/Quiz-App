@@ -119,8 +119,8 @@ function startQuiz() {
 }
 
 function checkQues() {
-    $('.quizPortion').on('click','.submitAns', function (event) {
-        event.preventDefault();
+    $('.quizPortion').submit('click', function (event){
+        event.preventDefault()
         $('.y').hide();
         $('.ansBox').show();
         let selected = $('input:checked');

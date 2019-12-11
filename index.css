@@ -39,6 +39,7 @@ main {
   border: 1.5px solid goldenrod;
   background: rgba(20, 16, 0, 0.7);
   width:65%;
+  max-width: 725px;
   margin: auto;
 }
 

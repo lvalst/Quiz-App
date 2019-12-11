@@ -119,7 +119,7 @@ function startQuiz() {
 }
 
 function checkQues() {
-    $('.quizPortion').on('click','.submitAns', function (event) {
+    $('.submitAns').on('click', function (event) {
         event.preventDefault();
         $('.y').hide();
         $('.ansBox').show();
@@ -148,23 +148,23 @@ function makeQues(quesNumber) { //run this function based off of the quesNumber
 
     STORE[quesNumber].answers.forEach(function (answerValue, answerIndex) {
         $(`<label class="sizeMe" for="${answerIndex}">
-            <input class="radio" type="radio" id="${answerIndex}" value="${answerValue}" name="answer" required="required" />
+            <input class="radio" type="radio" id="${answerIndex}" value="${answerValue}" name="answer" required/>
             <span style="text-align:left">${answerValue}</span> <br>
         </label> 
         `).appendTo(fieldSelector);
         }); 
-        //goes to each answer in the question and applies radio type to it with the index as the order respective string value, then adds to the the end of the fieldselector variable (behind formMaker)
+        //goes to each answer in the question and applies radio type to it with the index as the order respective string value, then adds all to the the end of the fieldselector variable (behind formMaker)
 
         $(`<button class="submitAns button">Submit Answer</button>`).appendTo(fieldSelector); //creates a submit button and adds it under the answers on the fieldSelector variable
-        return formMaker //return updated formMaker variable (allows it to change depending on quesNumber)
+        return formMaker //return updated formMaker variable (able to change input to .quesBox depending on quesNumber)
 
 }
-
+//what is shown in .ansBox if submittednswer correct
 function correctAns() {
-        $('.ansBox').html(
+        $('.ansBox').html( //creates html in .ansBox (which disappears once replaced)
         `<h2>Great job! You are correct:</h2> 
-        <h3><span>'${STORE[quesNumber].correctAnswer}'<span> is the answer!</h3>`)
-        if (quesNumber +1 < STORE.length) {
+        <h3><span>'${STORE[quesNumber].correctAnswer}'<span> is the answer!</h3>`) //confirms correct answer, highlights correct answer compared to rest of sentence
+        if (quesNumber +1 < STORE.length) { //whether to show comment and newQues button or "Finish" button
             $('.ansBox').append(
             `<p>Want to try the next one?</p>
             <button class="newQues button">Next Question</button>`); 
@@ -174,7 +174,7 @@ function correctAns() {
             }
         plusScoreNum();     
 };
-
+//what shown in .ansBox if submitted answer incorrect
 function wrongAns() {
     $('.ansBox').html(
         `<h2> Oh, close but not quite:</h2>
@@ -189,9 +189,18 @@ function wrongAns() {
         }
 };
 
+//makes next question
+function nextQues() {
+    $('.quizPortion').on('click','.newQues', function (event) {
+        $('.y').hide();
+        $('.quesBox').show();
+        plusQuesNum();
+        $('.quesBox form').replaceWith(newQues());
+    });
+}
+//tells js what to show in redoBox based on the score earned throughout quiz
 function finalScore() {
     $('.redoBox').show();
-
     const great = [
       'Great job!',
     ];
@@ -210,21 +219,11 @@ function finalScore() {
     }
     $('.redoBox').show();
     return $('.redoBox').html(
-      `<h3 class="scoreInsert">Completed questions ${quesNumber} of 5 and scored ${score} of 5:</h3>
+      `<h3>Completed questions <span>${quesNumber} of 5 </span>and scored<span> ${score} of 5</span>:</h3>
         <h3>${array[0]}</h3>
-        <button class="restartQuiz button"><style>a{text-decoration:none; color:rgb(0,0,0);}</style><a href="index.html">Try Again?</a></button>`
+        <button class="restartQuiz button"><a href="index.html">Try Again?</a></button>`
     );
   }
-
-//makes next question
-function nextQues() {
-    $('.quizPortion').on('click','.newQues', function () {
-        $('.y').hide();
-        $('.quesBox').show();
-        plusQuesNum();
-        $('.quesBox form').replaceWith(newQues());
-    });
-}
 
 //need to prep page for actions
 function overallFun() {

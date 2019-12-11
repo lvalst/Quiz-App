@@ -1,14 +1,15 @@
- .y { 
-  display:none; 
-}
- /* cannot use quizPortion tag, doesn't allow jquery to grab any of it to show*/
-.quizScores {
-  display:none;
-}
-
- * {
+/* base rules for all content */
+* {
   box-sizing: border-box;
   font-family: 'Philosopher', sans-serif;
+}
+
+/* start by hiding stats and all boxes on first page */
+.y { 
+  display:none; 
+}
+.quizScores {
+  display:none;
 }
 
 /* background video- DO NOT ADJUST */
@@ -20,7 +21,8 @@
   min-height: 100%;
   z-index: -1; 
 } 
-/* base rules for all html content */
+
+/* styling for majority of content on page */
 main, html {
   margin: 0;
   padding: 0;
@@ -40,7 +42,7 @@ main {
   margin: auto;
 }
 
-/* scores and ques number */
+/* style for scores and ques number */
 .quizScores {
   color: rgb(117, 161, 58);
   margin: auto;
@@ -70,7 +72,7 @@ li .stats {
   font-weight: bold;
 } 
 
-/* name of quiz style */
+/* style for quiz title */
 h1 .title {
   text-decoration: none;
   color: #ebe5c6;
@@ -150,10 +152,20 @@ fieldset .quesText {
 .ansBox h3 span {
   font-style:italic; 
   color: goldenrod; 
-  font-size:22px;
+  font-size:23px;
+  font-weight: bold;
 }
 .ansBox p {
   font-size:22px;
 }
 
 /* formatting for the text in .redoBox */
+
+.redoBox span {
+  color: goldenrod;
+}
+
+.redoBox button a {
+  text-decoration: none;
+  color: black;
+}

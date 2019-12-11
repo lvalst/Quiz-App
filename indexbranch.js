@@ -119,7 +119,7 @@ function startQuiz() {
 }
 
 function checkQues() {
-    $('.submitAns').on('click', function (event) {
+    $('.quizPortion').on('click','.submitAns', function (event) {
         event.preventDefault();
         $('.y').hide();
         $('.ansBox').show();

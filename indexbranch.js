@@ -149,7 +149,7 @@ function makeQues(quesNumber) { //run this function based off of the quesNumber
     STORE[quesNumber].answers.forEach(function (answerValue, answerIndex) {
         $(`<label class="sizeMe" for="${answerIndex}">
             <input class="radio" type="radio" id="${answerIndex}" value="${answerValue}" name="answer" required/>
-            <span style="text-align:left">${answerValue}</span> <br>
+            <span style="text-align:left">${answerValue}</span> <br><br>
         </label> 
         `).appendTo(fieldSelector);
         }); 

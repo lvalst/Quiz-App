@@ -107,8 +107,7 @@ button {
 button:focus {
   outline: none;
 }
-
-button:active {
+button:hover, button:active {
   background: rgb(139, 161, 58);
   border: 1px solid rgb(31, 119, 39); 
 }
@@ -119,7 +118,6 @@ button:active {
 .box {
   margin: 20px;
 }
-
 fieldset {
   display: inline-block;
   border: none;
@@ -130,15 +128,11 @@ fieldset .quesText {
   color: rgb(204, 161, 51);
   font-weight: bold;
   font-size: 22px;
-  margin: 0, 20px;
+  margin: 0, 4%;
 }
-
 .sizeMe input { /* radio buttons*/
   float:left; 
   margin:10px, 0;
-}
-.sizeMe span {
-  margin: 30px, 0;
 }
 
 
@@ -169,4 +163,119 @@ fieldset .quesText {
 .redoBox button a {
   text-decoration: none;
   color: black;
+}
+
+@media only screen and (min-width:320px){
+  li {
+    font-size: .85em;
+    margin: 0 3%;
+  }
+  h1 .title {
+    font-size: .7em;
+  }
+  button {
+    margin: 3%;
+    height: auto;
+    font-size: .9em;
+    padding: 1.7%;
+  }
+  .startQuiz h1 {
+    font-size: 1em;
+  } 
+  .quizScores {
+    font-size: 1em;
+  }
+  .box {
+    margin: 4%;
+  }
+  fieldset .quesText {
+    font-size: 1em;
+    margin: 0, 2%;
+    padding: 2%;
+  }
+  ansBox h2 {
+    font-size:.9em; 
+  }
+  .ansBox h3 span { 
+    font-size:.9em;
+  }
+  .ansBox p {
+    font-size:.9em;
+  }
+}
+
+@media only screen and (min-width: 550px){
+  li {
+    font-size: .95em;
+    margin: 0 3%;
+  }
+  h1 .title {
+    font-size: .75em;
+  }
+  button {
+    margin: 3%;
+    height: auto;
+    font-size: .95em;
+    padding: 1.7%;
+  }
+  .startQuiz h1 {
+    font-size: 1.1em;
+  } 
+  .quizScores {
+    font-size: 1.1em;
+  }
+  .box {
+    margin: 0, 5%;
+  }
+  fieldset .quesText {
+    font-size: 1.1em;
+    margin: 0, 3%;
+    padding: 0, 2%, 1%;
+  }
+  ansBox h2 {
+    font-size:.95em; 
+  }
+  .ansBox h3 span { 
+    font-size:.95em;
+  }
+  .ansBox p {
+    font-size:.95em;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  li {
+    margin: 0 4%;
+  }
+  h1 .title {
+    font-size: 30px;
+  }
+  button {
+    margin: 3%;
+    height: auto;
+    font-size: 22px;
+    padding: 1.7%;
+  }
+  .startQuiz h1 {
+    font-size: 24px;
+  } 
+  .quizScores {
+    font-size: 22px;
+  }
+  .box {
+    margin: 6%;
+  }
+  fieldset .quesText {
+    font-size: 22px;
+    margin: 0, 4%;
+  }
+  .ansBox h2 {
+    font-size:1em; 
+  }
+  .ansBox h3 span { 
+    font-size:1em;
+  }
+  .ansBox p {
+    font-size:1em;
+  }
 }
